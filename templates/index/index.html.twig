@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+<style>
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    <h2>Test de boucle for </h2>
+
+    <ul>
+        {% for firstname in firstnames %}
+            <li>
+                {% if firstname == 'Fred' %}
+                    Bonjour 
+                {% elseif firstname == 'Anthony' %}
+                    Salut
+                {% else %}
+                    yo
+                {% endif %}
+                {{ firstname }} 
+            </li>
+        {% else %}
+            <li> pas de prénom </li>
+        {% endfor %}
+    </ul>
+
+</div>
+{% endblock %}
