@@ -26,6 +26,12 @@ class Articles
     #[ORM\Column(length: 15, nullable: true)]
     private ?string $status = null;
 
+    #[ORM\ManyToOne(inversedBy: 'articles')]
+    private ?ArticleCategory $categoty = null;
+
+    #[ORM\ManyToOne]
+    private ?ArticleTag $tag = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -81,6 +87,30 @@ class Articles
     public function setStatus(?string $status = null): static
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    public function getCategoty(): ?ArticleCategory
+    {
+        return $this->categoty;
+    }
+
+    public function setCategoty(?ArticleCategory $categoty): static
+    {
+        $this->categoty = $categoty;
+
+        return $this;
+    }
+
+    public function getTag(): ?ArticleTag
+    {
+        return $this->tag;
+    }
+
+    public function setTag(?ArticleTag $tag): static
+    {
+        $this->tag = $tag;
 
         return $this;
     }

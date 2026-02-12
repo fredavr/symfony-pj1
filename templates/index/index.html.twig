@@ -7,24 +7,20 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    <h2>Test de boucle for </h2>
+    <h1>Bizarre bizarre </h1>
+
+    <h2>Liste des articles </h2>
+
+    <h3>Hello ! {{ controller_name }}  ✅</h3>
 
     <ul>
-        {% for firstname in firstnames %}
+        {% for article in articles %}
             <li>
-                {% if firstname == 'Fred' %}
-                    Bonjour 
-                {% elseif firstname == 'Anthony' %}
-                    Salut
-                {% else %}
-                    yo
-                {% endif %}
-                {{ firstname }} 
+                {{ article.title }}
             </li>
         {% else %}
-            <li> pas de prénom </li>
+            <li> pas d'article </li>
         {% endfor %}
     </ul>
 
